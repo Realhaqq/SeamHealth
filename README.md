@@ -11,7 +11,7 @@ For building and running the application you need:
 
 ## Running the application locally
 
-There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.musala.thedrone.TheDroneApplication` class from your IDE.
+There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the `com.samiu.seamhealth.SeamHealthApplication` class from your IDE.
 
 Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
 
@@ -21,7 +21,7 @@ mvn spring-boot:run
 
 ## Running the application on a remote machine
 ```shell
-http://localhost:9090
+http://localhost:8080
 ```
 ## Change the Database Configuration
 theDrone uses a relational database (MYSQL). You can change the database configuration by editing the `application.properties` file and `liquibase.properties`.
