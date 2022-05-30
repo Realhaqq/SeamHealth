@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class AddressUpdateRequest {
-    String homeAddress;
-    String lga;
-    String state;
+    private String homeAddress;
+    private String lga;
+    private String state;
 }

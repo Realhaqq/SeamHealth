@@ -1,5 +1,6 @@
 package com.samiu.seamhealth.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -9,13 +10,15 @@ import java.util.Date;
 @Table(name = "address")
 @Data
 public class Address {
+    private static final long serialVersionUID = 1L;
+
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    String homeAddress;
-    String lga;
-    String state;
+    private String homeAddress;
+    private String lga;
+    private String state;
     @Column(updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;

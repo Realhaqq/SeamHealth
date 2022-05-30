@@ -1,29 +1,41 @@
 package com.samiu.seamhealth.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
-@Table(name = "doctor")
+@Table(name = "doctor", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {
+                "email"
+        })
+})
 @Data
 public class Doctor {
+    private static final long serialVersionUID = 1L;
+
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(length=32, nullable = false)
-    String firstName;
+    private String firstName;
     @Column(length=32, nullable = false)
-    String lastName;
+    private String lastName;
     @Column(nullable = false, unique = true)
-    String email;
+    private String email;
     @Column(length=32, nullable = false)
-    String phone;
-    Long addressId;
+    private String phone;
+//    private Long addressId;
 
-    String uuid;
+    private String uuid;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
     @Column(updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt;

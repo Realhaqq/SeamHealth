@@ -8,7 +8,6 @@ public class DoctorAddRequest {
     private String lastName;
     private String email;
     private String phone;
-    private String addressId;
     private String homeAddress;
     private String lga;
     private String state;
